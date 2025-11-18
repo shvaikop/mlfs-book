@@ -136,6 +136,22 @@ This is because it now can learn from the time-series nature of the data.
 
 #### Tuned hyper-params with lagged features
 
+MSE: 93.04523
+R squared: 0.3554935567341714
+
+We can see that tuning hyperparameters slightly improves the performance of the model however, 
+it is insignificant compared to the improvement from adding lagged features.
+
+![pm25 hindcast](./notebooks/airquality/air_quality_model/lag_features_hyper_params/pm25_hindcast.png)
+
+![feature_importance](./notebooks/airquality/air_quality_model/lag_features_hyper_params/feature_importance.png)
+
+
+### Step 3: Parametrizing the notebooks to use them to train models for different sensors
+
+Next, we parametrized the notebooks to be able to provid the sesort url, country, city, ... as arguments.
+We used country, city, street in names of feature groups, feature views and in models saved in hopsworks too.
+
 
 
 
