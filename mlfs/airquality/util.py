@@ -346,3 +346,11 @@ def backfill_predictions_for_monitoring_with_lagged_features(weather_fg, air_qua
 
     return hindcast_df
 
+def construct_sensor_suffix(country, city, street):
+    return f"{country}_{city}_{street}".replace("-", "_")
+
+def construct_sensor_id(country, city, street):
+    return f"{country}/{city}/{street}"
+
+def construct_weather_suffix(country, city):
+    return f"{country}_{city}".replace("-", "_")

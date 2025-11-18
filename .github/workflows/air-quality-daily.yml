@@ -33,8 +33,16 @@ jobs:
           HOPSWORKS_API_KEY: ${{ secrets.HOPSWORKS_API_KEY }}
           AQICN_API_KEY: ${{ secrets.AQICN_API_KEY }}
         run: |
-          ipython notebooks/airquality/2_air_quality_feature_pipeline.ipynb
-          ipython notebooks/airquality/4_air_quality_batch_inference.ipynb
+          ipython notebooks/airquality/2_air_quality_feature_pipeline.ipynb -- --street "calle_hernando_de_zafra" --sensor-url "https://api.waqi.info/feed/A128242/" --csv-filename "calle-hernando-de-zafra-malaga-air-quality.csv"
+          ipython notebooks/airquality/4_air_quality_batch_inference.ipynb -- --street "calle_hernando_de_zafra" --sensor-url "https://api.waqi.info/feed/A128242/" --csv-filename "calle-hernando-de-zafra-malaga-air-quality.csv"
+          ipython notebooks/airquality/2_air_quality_feature_pipeline.ipynb -- --street "campanillas" --sensor-url "https://api.waqi.info/feed/@8489/" --csv-filename "campanillas-malaga-air-quality.csv"
+          ipython notebooks/airquality/4_air_quality_batch_inference.ipynb -- --street "campanillas" --sensor-url "https://api.waqi.info/feed/@8489/" --csv-filename "campanillas-malaga-air-quality.csv"
+          ipython notebooks/airquality/2_air_quality_feature_pipeline.ipynb -- --street "carranque" --sensor-url "https://api.waqi.info/feed/@8488/" --csv-filename "carranque-malaga-air-quality.csv"
+          ipython notebooks/airquality/4_air_quality_batch_inference.ipynb -- --street "carranque" --sensor-url "https://api.waqi.info/feed/@8488/" --csv-filename "carranque-malaga-air-quality.csv"
+          ipython notebooks/airquality/2_air_quality_feature_pipeline.ipynb -- --street "carril_del_capitan" --sensor-url "https://api.waqi.info/feed/A203590/" --csv-filename "carril_del_capitan.csv"
+          ipython notebooks/airquality/4_air_quality_batch_inference.ipynb -- --street "carril_del_capitan" --sensor-url "https://api.waqi.info/feed/A203590/" --csv-filename "carril_del_capitan.csv"
+          ipython notebooks/airquality/2_air_quality_feature_pipeline.ipynb -- --street "el-atabal" --sensor-url "https://api.waqi.info/feed/@8487" --csv-filename "el-atabal, malaga-air-quality.csv"
+          ipython notebooks/airquality/4_air_quality_batch_inference.ipynb -- --street "el-atabal" --sensor-url "https://api.waqi.info/feed/@8487" --csv-filename "el-atabal, malaga-air-quality.csv"
       - name: github pages publish
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
